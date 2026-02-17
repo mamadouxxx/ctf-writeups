@@ -1,0 +1,5 @@
+# Magic bytes
+magic_f="F"
+magic_u="U"
+magic_z="Z"
+magic_fuzz="FUZZ"

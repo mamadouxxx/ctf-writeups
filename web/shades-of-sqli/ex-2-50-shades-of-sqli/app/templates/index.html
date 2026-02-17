@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+<div class="welcome-container">
+    <h1>50 Shades of SQLi</h1>
+    <p class="subtitle">Three levels of SQL injection challenges</p>
+
+    <div class="level-grid">
+        <div class="level-card" onclick="window.location='{{ url_for('level1') }}'">
+            <div class="level-number">1</div>
+            <h3>Authentication Bypass</h3>
+        </div>
+
+        <div class="level-card" onclick="window.location='{{ url_for('level2') }}'">
+            <div class="level-number">2</div>
+            <h3>Union-Based Read</h3>
+        </div>
+
+        <div class="level-card" onclick="window.location='{{ url_for('level3') }}'">
+            <div class="level-number">3</div>
+            <h3>Boolean-Based Blind</h3>
+        </div>
+    </div>
+</div>
+{% endblock %} 

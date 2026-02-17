@@ -1,0 +1,210 @@
+/* Base styles */
+:root {
+    --primary: #4f46e5;
+    --primary-dark: #4338ca;
+    --secondary: #64748b;
+    --danger: #ef4444;
+    --success: #22c55e;
+    --background: #f8fafc;
+    --card: #ffffff;
+    --text: #1e293b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--background);
+}
+
+/* Navigation */
+nav {
+    background: var(--card);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.nav-links a {
+    color: var(--secondary);
+    text-decoration: none;
+    margin-left: 2rem;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* Main content */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.welcome-container {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--text);
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    color: var(--secondary);
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+}
+
+/* Level grid */
+.level-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.level-card {
+    background: var(--card);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.level-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+}
+
+.level-number {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--primary);
+    color: white;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.level-card h3 {
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
+/* Forms and inputs */
+.challenge-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--card);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    font-family: inherit;
+}
+
+button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: var(--primary-dark);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--secondary);
+    border-top: 1px solid #e2e8f0;
+    margin-top: 4rem;
+}
+
+/* Form specific styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+    font-weight: 500;
+}
+
+#result {
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background: var(--background);
+}
+
+.challenge-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: var(--card);
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.challenge-container h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.challenge-container .subtitle {
+    color: var(--secondary);
+    margin-bottom: 2rem;
+} 

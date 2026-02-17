@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+<div class="welcome-container">
+    <h1>XSS Tower</h1>
+    <p class="subtitle">Four levels of Cross-Site Scripting challenges</p>
+
+    <div class="level-grid">
+        <div class="level-card" onclick="window.location='{{ url_for('level1') }}'">
+            <div class="level-number">1</div>
+            <h3>Reflected XSS</h3>
+        </div>
+
+        <div class="level-card" onclick="window.location='{{ url_for('level2') }}'">
+            <div class="level-number">2</div>
+            <h3>Stored XSS</h3>
+        </div>
+
+        <div class="level-card" onclick="window.location='{{ url_for('level3') }}'">
+            <div class="level-number">3</div>
+            <h3>DOM-based XSS</h3>
+        </div>
+
+        <div class="level-card" onclick="window.location='{{ url_for('level4') }}'">
+            <div class="level-number">4</div>
+            <h3>Server-Side XSS</h3>
+        </div>
+    </div>
+</div>
+{% endblock %}

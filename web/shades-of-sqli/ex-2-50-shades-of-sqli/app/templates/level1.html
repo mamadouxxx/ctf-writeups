@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Level 1 - Authentication Bypass{% endblock %}
+
+{% block content %}
+<div class="challenge-container">
+    <h1>Level 1: Authentication Bypass</h1>
+    <p class="subtitle">Can you bypass the login without valid credentials?</p>
+
+    <form method="POST" action="/level1">
+        <input type="hidden" name="level" value="1">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Login</button>
+    </form>
+
+    <div id="result"></div>
+</div>
+{% endblock %} 

@@ -1,0 +1,11 @@
+services:
+  web:
+    build: .
+    container_name: web
+    volumes:
+      - ./app:/app
+    ports:
+      - 127.0.0.1:5000:5000
+    environment:
+      - SOME_SUPER_SECRET=web_is_sexy_trust_me
+    command: bash -c "python -m flask run --host=0.0.0.0 --port=5000"

@@ -1,0 +1,9 @@
+{
+  "user": {
+    "name": "Bob",
+    "profile": {
+      "email": "bob@example.com",
+      "verified": true
+    }
+  }
+}

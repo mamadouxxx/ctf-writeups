@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Simple XML with comments and CDATA -->
+<document>
+    <header>
+        <title>Test Document</title>
+        <date>2025-01-07</date>
+    </header>
+    <body>
+        <paragraph>Normal text content</paragraph>
+        <code><![CDATA[
+            function example() {
+                return "This is CDATA section with <special> characters & symbols";
+            }
+        ]]></code>
+        <list>
+            <item>First item</item>
+            <item>Second item with &lt;escaped&gt; entities</item>
+            <item>Third item</item>
+        </list>
+    </body>
+    <footer>
+        <!-- This is a comment -->
+        <copyright>© 2025 Example Corp</copyright>
+    </footer>
+</document>

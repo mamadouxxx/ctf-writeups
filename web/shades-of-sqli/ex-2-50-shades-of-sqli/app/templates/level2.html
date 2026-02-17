@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Level 2 - Union Based{% endblock %}
+
+{% block content %}
+<div class="challenge-container">
+    <h1>Level 2: Union Based SQLi</h1>
+    <p class="subtitle">Try to extract data from other tables using UNION</p>
+
+    <form method="POST" action="/level2">
+        <input type="hidden" name="level" value="2">
+        <div class="form-group">
+            <label for="table">Table Name:</label>
+            <input type="text" id="table" name="table" required>
+        </div>
+        <button type="submit">Query Data</button>
+    </form>
+
+    <div id="result"></div>
+</div>
+{% endblock %} 

@@ -1,0 +1,169 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 18,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "host-debug",
+      "displayName": "Host Debug Build with ASAN",
+      "description": "Debug build for host platform with AddressSanitizer",
+      "binaryDir": "${sourceDir}/build/host",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "ENABLE_ASAN": "ON",
+        "BUILD_FUZZER": "ON"
+      }
+    },
+    {
+      "name": "host-release",
+      "displayName": "Host Release Build",
+      "description": "Optimized release build for host platform",
+      "binaryDir": "${sourceDir}/build/host-release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "ENABLE_ASAN": "OFF",
+        "BUILD_FUZZER": "ON"
+      }
+    },
+    {
+      "name": "libfuzzer",
+      "displayName": "libFuzzer Build",
+      "description": "Build with libFuzzer instrumentation (requires LLVM)",
+      "binaryDir": "${sourceDir}/build/libfuzzer",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "USE_LIBFUZZER": "ON",
+        "ENABLE_ASAN": "ON",
+        "BUILD_FUZZER": "ON"
+      }
+    },
+    {
+      "name": "android-base",
+      "displayName": "Android Base Configuration",
+      "description": "Base configuration for Android builds (do not use directly, requires ANDROID_NDK env var)",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "ENABLE_ASAN": "ON",
+        "BUILD_FUZZER": "ON",
+        "ANDROID_PLATFORM": "android-24",
+        "CMAKE_TOOLCHAIN_FILE": "$env{ANDROID_NDK}/build/cmake/android.toolchain.cmake"
+      }
+    },
+    {
+      "name": "android-arm64",
+      "displayName": "Android ARM64 (arm64-v8a)",
+      "description": "Build for Android ARM64 devices (shared library only)",
+      "inherits": "android-base",
+      "binaryDir": "${sourceDir}/build/android/arm64-v8a",
+      "cacheVariables": {
+        "ANDROID_ABI": "arm64-v8a",
+        "BUILD_FUZZER": "OFF"
+      }
+    },
+    {
+      "name": "android-arm64-static",
+      "displayName": "Android ARM64 Static Fuzzer",
+      "description": "Build statically-linked fuzzer for Android ARM64 (for AFL-QEMU)",
+      "inherits": "android-base",
+      "binaryDir": "${sourceDir}/build/android/arm64-v8a",
+      "cacheVariables": {
+        "ANDROID_ABI": "arm64-v8a",
+        "BUILD_FUZZER": "ON",
+        "ENABLE_ASAN": "OFF"
+      }
+    },
+    {
+      "name": "android-arm",
+      "displayName": "Android ARM (armeabi-v7a)",
+      "description": "Build for Android 32-bit ARM devices",
+      "inherits": "android-base",
+      "binaryDir": "${sourceDir}/build/android/armeabi-v7a",
+      "cacheVariables": {
+        "ANDROID_ABI": "armeabi-v7a"
+      }
+    },
+    {
+      "name": "android-x86_64",
+      "displayName": "Android x86_64",
+      "description": "Build for Android x86_64 (emulator)",
+      "inherits": "android-base",
+      "binaryDir": "${sourceDir}/build/android/x86_64",
+      "cacheVariables": {
+        "ANDROID_ABI": "x86_64"
+      }
+    },
+    {
+      "name": "android-x86",
+      "displayName": "Android x86",
+      "description": "Build for Android x86 (emulator)",
+      "inherits": "android-base",
+      "binaryDir": "${sourceDir}/build/android/x86",
+      "cacheVariables": {
+        "ANDROID_ABI": "x86"
+      }
+    },
+    {
+      "name": "android-x86_64-libfuzzer",
+      "displayName": "Android x86_64 libFuzzer",
+      "description": "Build for Android x86_64 with libFuzzer (requires custom build script)",
+      "inherits": "android-base",
+      "binaryDir": "${sourceDir}/build/android_libfuzzer/x86_64",
+      "cacheVariables": {
+        "ANDROID_ABI": "x86_64",
+        "BUILD_FUZZER": "OFF",
+        "ENABLE_ASAN": "OFF"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "host-debug",
+      "configurePreset": "host-debug",
+      "jobs": 8
+    },
+    {
+      "name": "host-release",
+      "configurePreset": "host-release",
+      "jobs": 8
+    },
+    {
+      "name": "libfuzzer",
+      "configurePreset": "libfuzzer",
+      "jobs": 8
+    },
+    {
+      "name": "android-arm64",
+      "configurePreset": "android-arm64",
+      "jobs": 8
+    },
+    {
+      "name": "android-arm64-static",
+      "configurePreset": "android-arm64-static",
+      "jobs": 8
+    },
+    {
+      "name": "android-arm",
+      "configurePreset": "android-arm",
+      "jobs": 8
+    },
+    {
+      "name": "android-x86_64",
+      "configurePreset": "android-x86_64",
+      "jobs": 8
+    },
+    {
+      "name": "android-x86",
+      "configurePreset": "android-x86",
+      "jobs": 8
+    },
+    {
+      "name": "android-x86_64-libfuzzer",
+      "configurePreset": "android-x86_64-libfuzzer",
+      "jobs": 8
+    }
+  ]
+}

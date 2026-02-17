@@ -1,0 +1,13 @@
+services:
+  sql-exploit:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 127.0.0.1:5000:5000
+    volumes:
+      - ./app:/app
+    environment:
+      - FLASK_APP=app.py
+      - FLASK_ENV=development
+    command: flask run --host=0.0.0.0 --port=5000

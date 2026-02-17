@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <element id="1">
+        <name>Example Element</name>
+        <value>42</value>
+        <description>This is a simple XML document for fuzzing</description>
+    </element>
+    <element id="2">
+        <name>Another Element</name>
+        <value>123</value>
+        <description>Testing libxml2 parser</description>
+    </element>
+</root>

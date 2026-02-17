@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Level 1 - Reflected XSS{% endblock %}
+
+{% block content %}
+<div class="challenge-container">
+    <h2>Level 1: Reflected XSS</h2>
+
+    <form method="GET" class="challenge-form">
+        <input type="text" name="input" placeholder="Enter your input..." value="{{ user_input }}">
+        <button type="submit">Submit</button>
+    </form>
+
+    <div class="output-container">
+        {{ user_input|safe }}
+    </div>
+</div>
+{% endblock %}

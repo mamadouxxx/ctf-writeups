@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Level 3 - Blind SQLi{% endblock %}
+
+{% block content %}
+<div class="challenge-container">
+    <h1>Level 3: Blind SQL Injection</h1>
+    <p class="subtitle">Extract data using boolean-based blind SQL injection</p>
+
+    <form method="POST" action="/level3">
+        <input type="hidden" name="level" value="3">
+        <div class="form-group">
+            <label for="condition">SQL Condition:</label>
+            <input type="text" id="condition" name="condition" required>
+        </div>
+        <button type="submit">Test Condition</button>
+    </form>
+
+    <div id="result"></div>
+</div>
+{% endblock %} 

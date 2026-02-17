@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+    <!ELEMENT catalog (book+)>
+    <!ELEMENT book (title, author, year, price)>
+    <!ATTLIST book id ID #REQUIRED>
+    <!ELEMENT title (#PCDATA)>
+    <!ELEMENT author (#PCDATA)>
+    <!ELEMENT year (#PCDATA)>
+    <!ELEMENT price (#PCDATA)>
+]>
+<catalog xmlns="http://example.com/catalog" xmlns:bk="http://example.com/book">
+    <book id="bk001">
+        <title>Fuzzing: Theory and Practice</title>
+        <author>John Doe</author>
+        <year>2024</year>
+        <price currency="USD">49.99</price>
+        <bk:metadata>
+            <bk:pages>350</bk:pages>
+            <bk:isbn>978-1234567890</bk:isbn>
+        </bk:metadata>
+    </book>
+    <book id="bk002">
+        <title>Advanced Security Testing</title>
+        <author>Jane Smith</author>
+        <year>2023</year>
+        <price currency="EUR">39.99</price>
+        <bk:metadata>
+            <bk:pages>420</bk:pages>
+            <bk:isbn>978-0987654321</bk:isbn>
+        </bk:metadata>
+    </book>
+    <book id="bk003">
+        <title>XML Processing &amp; Parsing</title>
+        <author>Bob Johnson</author>
+        <year>2025</year>
+        <price currency="GBP">29.99</price>
+        <bk:metadata>
+            <bk:pages>280</bk:pages>
+            <bk:isbn>978-1122334455</bk:isbn>
+        </bk:metadata>
+    </book>
+</catalog>

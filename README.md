@@ -46,7 +46,7 @@ Each challenge contains:
 
 - GDB / pwndbg
 - pwntools
-- Ghidra
+- Ghidra / IDA
 - objdump / readelf
 - AFL++
 - AddressSanitizer

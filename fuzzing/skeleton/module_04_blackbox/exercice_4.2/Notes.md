@@ -1,0 +1,35 @@
+/\*
+
+-   INSTRUCTOR NOTES:
+-
+-   Expected vulnerabilities students should find:
+-
+-   1. BUFFER OVERFLOW (Easy)
+-   Input: Python -c "print('A' \* 300)"
+-   Location: parse_command() - strcpy without bounds checking
+-
+-   2. FORMAT STRING (Medium)
+-   Input: "DEBUG %x.%x.%x.%x.%x"
+-   Location: execute_command() - printf(cmd->data)
+-
+-   3. INTEGER OVERFLOW -> HEAP OVERFLOW (Hard)
+-   Input: "PROCESS PROC:4294967295:AAAA"
+-   Location: process_data() - integer overflow in allocation
+-
+-   4. USE-AFTER-FREE (Hard)
+-   Input: "SPECIAL MAGIC123TRIGGER"
+-   Location: handle_special_command() - accessing freed pointer
+-
+-   Compilation for students (no sanitizers, stripped):
+-   gcc -O0 -g blackbox_target.c -o blackbox_target
+-   strip blackbox_target
+-
+-   Compilation for testing (with ASAN for verification):
+-   clang -fsanitize=address -g blackbox_target.c -o blackbox_target_asan
+-
+-   Testing each bug:
+-   1.  python3 -c "print('A' \* 300)" | ./blackbox_target_asan
+-   2.  echo "DEBUG %x.%x.%x.%x" | ./blackbox_target_asan
+-   3.  echo "PROCESS PROC:4294967295:DATA" | ./blackbox_target_asan
+-   4.  echo "SPECIAL MAGIC123TRIGGER" | ./blackbox_target_asan
+        \*/

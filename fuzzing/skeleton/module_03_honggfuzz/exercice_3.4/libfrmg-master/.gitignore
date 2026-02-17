@@ -1,0 +1,47 @@
+# Build directories
+build/
+cmake-build-*/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+
+# Compiled files
+*.o
+*.so
+*.dylib
+*.dll
+*.a
+*.lib
+
+# Fuzzing outputs
+fuzzing/findings/
+fuzzing/*.log
+*.profraw
+*.profdata
+
+# Android
+*.apk
+*.ap_
+*.dex
+local.properties
+.gradle/
+.cxx/
+
+# macOS
+.DS_Store
+
+# Crash files
+crash-*
+leak-*
+timeout-*

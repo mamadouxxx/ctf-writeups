@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>50 Shades of SQLi - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <a href="{{ url_for('index') }}" class="logo">50 Shades of SQLi</a>
+            <div class="nav-links">
+                <a href="{{ url_for('level1') }}">Level 1</a>
+                <a href="{{ url_for('level2') }}">Level 2</a>
+                <a href="{{ url_for('level3') }}">Level 3</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>🎯 A Journey Through SQL Injection Techniques</p>
+    </footer>
+</body>
+</html> 

@@ -1,0 +1,9 @@
+services:
+  php-backend:
+    image: php:7.4
+    command: ["php", "-S", "0.0.0.0:80", "-t", "/var/www/html"]
+    container_name: php-backend-3
+    ports:
+      - 127.0.0.1:5000:80
+    volumes:
+      - ./src:/var/www/html
