@@ -1,0 +1,59 @@
+# ===== Scripts privés =====
+scripts/
+*.pyc
+*.pyo
+
+# ===== Binaries / compilations =====
+*.exe
+*.out
+*.elf
+*.bin
+*.o
+*.so
+
+# ===== C / C++ source temporary / build =====
+*.obj
+*.class
+*.stackdump
+*.log
+*.map
+*.dmp
+
+# ===== IDA / Ghidra =====
+*.idb
+*.i64
+*.id0
+*.id1
+*.id2
+*.id3
+*.id4
+*.id5
+*.id6
+*.id7
+*.id9
+*.idc
+*.nam
+*.til
+*.gdl
+*.ghidra
+*.gpr
+
+# ===== Misc temporary files =====
+*.tmp
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ===== Coverage / fuzzing artifacts =====
+crashes/
+queue/
+fuzz-logs/
+*.cov
+*.prof
+
+# ===== Python virtual environment =====
+venv/
+.env/
+__pycache__/
